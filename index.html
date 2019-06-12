@@ -40,6 +40,11 @@ body {
   background-color: #99cc00; /*#86b300; /*#d9ff66;/*#b3ff66; /*#ddd; (put this in comments)Grey background color */
   color: black; /* Black text color */
 }
+  
+  .button {
+display: block;
+margin-top: 10px;
+}
 </style>
 </head>
 <body>
@@ -56,6 +61,43 @@ body {
     <h1>Pollen, NO!</h1>
     <h3>Support the fight against seasonal allergies!</h3>
   </div>
+  
+  <form  id="form1">
+<p>The instructor was prepared for class.</p>
+<input type="radio" name="prepared" value="1" /><label for="prepared_one">1</label>
+<input type="radio" name="prepared" value="2" /><label for="prepared_two">2</label>
+<input type="radio" name="prepared" value="3" /><label for="prepared_three">3</label>
+<input type="radio" name="prepared" value="4" /><label for="prepared_four">4</label>
+<input type="radio" name="prepared" value="5" /><label for="prepared_five">5</label>
+
+<p>The topic was interesting to me.</p>
+<input type="radio" name="interesting" value="1" /><label for="int_one">1</label>
+<input type="radio" name="interesting" value="2" /><label for="int_two">2</label>
+<input type="radio" name="interesting" value="3" /><label for="int_three">3</label>
+<input type="radio" name="interesting" value="4" /><label for="int_four">4</label>
+<input type="radio" name="interesting" value="5" /><label for="int_five">5</label>
+
+
+<button type="submit" value="Submit" class="button">Submit</button>
+</form>
+
+<p>Question 1 Answer: <span id="quest1"></span></p>
+<p>Question 2 Answer: <span id="quest2"></span></p>
+<p>Score Total: <span id="total"></span></p>
+<p>Score Average: <span id="average"></span></p>
+    <p>Average above 3 (Yes or No): <span id="above3"></span></p>
+    <p>Which measures scored 5?: <span id="score5"></span></p>
+
+<script>
+//this is the generic function that submits the form. Name of form above must be the same as id below
+document.getElementById("form1").onsubmit=function() {
+
+//code the rest of your script here
+
+return false; // required to not refresh the page; just leave this here
+}
+</script>
+
 
 </body>
 </html>
