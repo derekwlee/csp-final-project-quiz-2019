@@ -41,6 +41,33 @@ body {
   color: black; /* Black text color */
 }
   
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+.active, .collapsible:hover {
+  background-color: #555;
+}
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}  
+  
+  
+  
+  
+  
+/*javascript*/
+  
 body{
     font-size: 20px;
     font-family: sans-serif;
@@ -87,11 +114,29 @@ body{
   </div>
   
 <h1>Seasonal Allergy Quiz</h1>
-<div id="quiz"></div>
-<button id="submit">Submit Quiz</button>
-<div id="results"></div>
+  
+<button class="collapsible">Test Your Knowledge on Seasonal Allergies!</button>
+  <div class="content">
+    <div id="quiz"></div>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
+  </div>
   
 <script>
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+  
   (function() {
   function buildQuiz() {
     // we'll need a place to store the HTML output
