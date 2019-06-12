@@ -87,8 +87,8 @@ body{
   </div>
   
 <div id="quiz">
-  <h1>Seasonal Allergy Quiz</h1>
 </div>
+<h1>Seasonal Allergy Quiz</h1>
 <button id="submit">Submit Quiz</button>
 <div id="results"></div>
   
@@ -146,13 +146,14 @@ body{
         numCorrect++;
 
         // color the answers green
-        answerContainers[questionNumber].style.color = "lightgreen";
+        answerContainers[questionNumber].style.color = "green";
       } else {
         // if answer is wrong or blank
         // color the answers red
         answerContainers[questionNumber].style.color = "red";
       }
     });
+    
 
     // show number of correct answers out of total
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
