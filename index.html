@@ -141,17 +141,17 @@ for (i = 0; i < coll.length; i++) {
   
   (function() {
   function buildQuiz() {
-    // we'll need a place to store the HTML output
+    // store HTML output
     const output = [];
 
-    // for each question...
+    // for each question
     myQuestions.forEach((currentQuestion, questionNumber) => {
-      // we'll want to store the list of answer choices
+      //store list of answer choices
       const answers = [];
 
-      // and for each available answer...
+      //for each available answer
       for (letter in currentQuestion.answers) {
-        // ...add an HTML radio button
+        // add an HTML radio button
         answers.push(
           `<label>
             <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -168,7 +168,7 @@ for (i = 0; i < coll.length; i++) {
       );
     });
 
-    // finally combine our output list into one string of HTML and put it on the page
+    // lastly??? combine output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join("");
   }
 
@@ -302,7 +302,7 @@ for (i = 0; i < coll.length; i++) {
       answers: {
         a: "Latex",
         b: "David Whitney",
-        c: "Cremation",
+        c: "Paper",
         d: "Bee Venom",
         e: "Mold",
       },
@@ -318,17 +318,6 @@ for (i = 0; i < coll.length; i++) {
         e: "Hanamaru Kunikida",
       },
       correctAnswer: "d"
-    },
-    {
-      question: "Which Sweetener/Thank U Next Tour City Did Ariana Grande Postpone Because of an Allergic Reaction?",
-      answers: {
-        a: "Orlando",
-        b: "Chicago",
-        c: "St. Louis",
-        d: "New York City",
-        e: "Portland",
-      },
-      correctAnswer: "a"
     },
   ];
 
